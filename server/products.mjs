@@ -2,34 +2,31 @@ import fs from "fs";
 
 let products = [];
 
-/**
- * CHARGE LES PRODUITS DU FICHIER DANS LE TABLEAU
- */
+
+
+//Lis le fichier products.json
+
 const loadProducts = () => {
   try {
     const data = fs.readFileSync("./products.json", "utf8");
     products = JSON.parse(data);
   } catch (err) {
-    console.error(`loadProducts > ${err}`);
+    console.error(` ${err}`);
   }
 };
 
-/**
- * ECRIT LE TABLEAU DE PRODUITS DANS LE FICHIER
- */
+//insert le produit dans le fichier products.json
+
 const writeProducts = () => {
   try {
     fs.writeFileSync("./products.json", JSON.stringify(products, null, 2));
   } catch (err) {
-    console.error(`writeProducts > ${err}`);
+    console.error(` ${err}`);
   }
 };
 
-/**
- * AJOUT SYNCHRONE
- * @param {string} p : product
- * @returns promise
- */
+//ajout du produit
+
 const add = (name, quantity) => {
   loadProducts();
   const pdt = products.find((e) => e.name === name);
@@ -38,8 +35,8 @@ const add = (name, quantity) => {
     if (quantity) {
       pdt.quantity += quantity;
     } else {
-      console.log(`Manque la quantity pour ${name}`);
-      return `Manque la quantity pour ${name}`;
+      console.log(`entrez une quantité ${name}`);
+      return `entrez une quantité ${name}`;
     }
   } else {
     products.push({ name, quantity });
@@ -47,35 +44,23 @@ const add = (name, quantity) => {
 
   writeProducts();
 
-  console.log(`${quantity} ${name} ajouté(e)(s)`);
-  return `${quantity} ${name} ajouté(e)(s)`;
+  console.log(`${quantity} ${name} added`);
+  return `${quantity} ${name} added`;
 };
 
-/**
- * RETOURNE LA LISTE DES PRODUITS
- * @returns [object]
- */
+//Retourne la liste des produits
 const getAll = () => {
   loadProducts();
   return products;
 };
 
-/**
- * RETOURNE UN PRODUIT PAR SON NOM
- * @param {*} id
- * @returns object : product
- */
+//Retourne les infos d'un produit par rapport à son nom
 const getByName = (name) => {
   loadProducts();
   return products.find((p) => p.name === name);
 };
 
-/**
- * MET A JOUR UN PRODUIT PAR SON NOM
- * @param {string} name
- * @param {object} p : product
- * @returns bool
- */
+//Met à jour un produit par rapport à son nom
 const update = (name, p) => {
   loadProducts();
   const i = products.findIndex((e) => e.name === name);
@@ -89,12 +74,7 @@ const update = (name, p) => {
   return false;
 };
 
-/**
- * SUPPRIME LE PRODUIT SI AUCUNE QUANTITY PASSEE SINON SUPPRIME LE NOMBRE DE QUANTITY
- * @param {*} name
- * @param {*} quantity
- * @returns
- */
+//supprime la quantité de produit
 const remove = (name, quantity) => {
   const pdt = products.find((e) => e.name === name);
 
@@ -108,14 +88,14 @@ const remove = (name, quantity) => {
 
       // soustrait le stock
       pdt.quantity -= quantity;
-      console.log(`${quantity} ${name} supprimé(e)(s), reste ${pdt.quantity}`);
+      console.log(`${quantity} ${name} supprimé, il reste ${pdt.quantity}`);
       writeProducts();
       return true;
     }
 
     // supprime le produit
     products = products.filter((e) => e.name !== name);
-    console.log(`${p.name} supprimé(e)s, 0 stock`);
+    console.log(`${p.name} deleted`);
     writeProducts();
     return true;
   }

@@ -3,23 +3,32 @@ import { add, getAll, getByName, remove } from "./products.mjs"
 
 const router = express.Router()
 
+
 router.get('/', (req, res) => {
-    res.send('/products/name => un produit spé & /products => tout les produits')
+    res.send('test')
 })
 
-router.get('/products', (req, res) => {
+
+
+router.get('/products', (_, res) => {
     res.send(getAll())
 })
+
+
+router.post('/products', (req, res) => {
+    const { name, quantity } = req.body
+    res.send(add(name, quantity))
+})
+
+
+
 
 router.get('/products/:name', (req, res) => {
     const name = req.params.name
     res.send(getByName(req.params.name))
 })
 
-router.post('/products', (req, res) => {
-    const { name, quantity } = req.body
-    res.send(add(name, quantity))
-})
+
 
 router.delete('/products/:name', (req, res) => {
     let quantity = 0
@@ -28,13 +37,13 @@ router.delete('/products/:name', (req, res) => {
         quantity = req.query.quantity
         const check = remove(name, quantity)
         if (check) {
-            res.send("delete success")
+            res.send("success")
         } else {
-            res.send("check name or quantity")
+            res.send("verifier vos inputs")
         }
     }
     else {
-        res.send("cant delete without quantity")
+        res.send("enter a quantity")
     }
 
 

@@ -6,5 +6,9 @@
   {
     "name": "pomme",
     "quantity": 380
+  },
+  {
+    "name": "citron",
+    "quantity": 7
   }
 ]
