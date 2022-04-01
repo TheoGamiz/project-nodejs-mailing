@@ -1,0 +1,22 @@
+###
+GET http://localhost:3011/products
+
+###
+GET http://localhost:3011/
+
+###
+GET http://localhost:3011/products/pomme
+
+###
+POST http://localhost:3011/products HTTP/1.1
+content-type: application/json
+
+{
+    "name": "orange",
+    "quantity": 10
+}
+
+###
+DELETE http://localhost:3000/products/pomme?quantity=500 HTTP/1.1
+
+
