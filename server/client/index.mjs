@@ -7,7 +7,7 @@ import axios from "axios"
 const getProducts = () => {
     setTimeout(() => {
         return new Promise((resolve, _) => {
-            axios.get('http://localhost:3011/products')
+            axios.get('http://localhost:3000/products')
                 .then((response) => {
                     console.log(response.data)
                     resolve(response);
@@ -19,7 +19,7 @@ const getProducts = () => {
 
 const addProduct = (name, quantity) => {
     setTimeout(() => {
-        axios.post('http://localhost:3011/products', {
+        axios.post('http://localhost:3000/products', {
             name: name,
             quantity: quantity
         })
@@ -35,7 +35,7 @@ const addProduct = (name, quantity) => {
 const getProductsAsync = () => {
     return new Promise(resolve => {
         setTimeout(() => {
-            axios.get('http://localhost:3011/products')
+            axios.get('http://localhost:3000/products')
                 .then((response) => {
                     resolve(response.data);
                 });
