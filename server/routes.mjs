@@ -1,5 +1,6 @@
 import express from "express"
 import { add, getAll, getByName, remove } from "./products.mjs"
+import { client } from "./elephantsql.mjs"
 
 const router = express.Router()
 
@@ -8,6 +9,14 @@ router.get('/', (req, res) => {
     res.send('test')
 })
 
+router.get('/a', async (req, res) => {
+    try {
+        const results = await client.query('SELECT * FROM your_table');
+        res.json(results);
+    } catch (err) {
+        console.log(err);
+    }
+})
 
 
 router.get('/products', (_, res) => {
