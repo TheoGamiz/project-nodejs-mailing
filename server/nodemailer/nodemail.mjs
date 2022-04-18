@@ -26,7 +26,7 @@ var mailOptions = {
   from: 'projetnodejsesgi@gmail.com',
   to: "projetnodejsesgi@gmail.com",
   subject: 'Premier test',
-  template: 'monsieur',
+  template: 'madame',
   context: {
     text: "Contenu"
   }
