@@ -1,0 +1,36 @@
+doctype html 
+html
+
+    head
+        title Create Contact
+
+    body 
+        form(action=`/create/` method="POST")
+            input(
+            type="text"
+            name="id"
+            )
+            input(
+            type="text"
+            name="name"
+            )
+            input(
+            type="text"
+            name="firstname"
+            )
+            input(
+            type="text"
+            name="lastname"
+            )
+            input(
+            type="text"
+            name="mail"
+            )
+            input(
+            type="text"
+            name="creationdate"
+            )
+            
+            input(type="submit")
+        
+        a(href="/") Home

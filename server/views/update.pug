@@ -1,0 +1,19 @@
+doctype html 
+html
+
+    head
+        title=data.title
+
+    body 
+        form(action=`/update/${data.id}` method="POST")
+            input(
+            type="text"
+            value=`${data.title}`
+            name="title"
+            )
+            textarea(
+            name="body"
+            )= data.body
+            input(type="submit")
+            
+        a(href="/") Home
