@@ -3,8 +3,14 @@ html
 
     head
         title Create Contact
+    
 
     body 
+        
+        h1 Creer un nouvel utilisateur: 
+        tr 
+                th id:   _________________name:______________firstname:___________lastname:___________email:_______________date:
+                
         form(action=`/create/` method="POST")
             input(
             type="text"
@@ -32,5 +38,7 @@ html
             )
             
             input(type="submit")
+
+    
         
-        a(href="/") Home
+        a(href="/") Retour

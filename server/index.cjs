@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const create = require("./routes/create.cjs");
 const read = require("./routes/read.cjs");
 const update = require("./routes/update.cjs");
+const rep = require("./routes/repertoire.cjs");
 const del = require("./routes/delete.cjs");
 
 const app = express();
@@ -16,6 +17,7 @@ app.use("/create", create);
 app.use("/read", read);
 app.use("/update", update);
 app.use("/delete", del);
+app.use("/repertoire", rep);
 
 
 
