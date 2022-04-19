@@ -1,0 +1,14 @@
+doctype html 
+html
+    head
+        title=data.id
+       
+    body 
+        h1=data.name 
+        p=data.mail
+        br
+        a(href=`/update-contact/${data.id}`) Update contact.
+        br
+        a(href=`/delete-contact/${data.id}`) Delete contact.
+        br
+        a(href="/") Menu principal

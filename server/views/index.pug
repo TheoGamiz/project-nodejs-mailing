@@ -4,21 +4,7 @@ html
         title BIENVENUE ICI C l'ESGI
         
     body 
-        h1 L'application de mail trop bien la: 
-        - var n=0;
-        table  
-            tr 
-                th Bonjour 
-                th Mr, Mme
-             
-                for data in item
-                    - n++
-                    tr
-                        td= n
-                        td 
-                            a(href=`/read/${data.id}`)=data.title
-                        td
-                            a(href=`/update/${data.id}`) Update
-                            a(href=`/delete/${data.id}`) Delete
+        h1 APPLICATION DE MAILING ESGI: 
+       
     br
-    a(href="/create") Envoyer un mail 
+    a(href="/repertoire") Répertoire

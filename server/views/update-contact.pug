@@ -1,0 +1,21 @@
+doctype html 
+html
+
+    head
+        title=data.name
+
+    body 
+        form(action=`/update-contact/${data.id}` method="POST")
+            input(
+            type="text"
+            value=`${data.name}`
+            name="name"
+            )
+            input(
+            type="text"
+            value=`${data.mail}`
+            name="mail"
+            )
+            input(type="submit")
+            
+        a(href="/") Home
