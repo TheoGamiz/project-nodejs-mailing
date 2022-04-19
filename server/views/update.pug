@@ -2,18 +2,20 @@ doctype html
 html
 
     head
-        title=data.title
+        title=data.name
 
     body 
         form(action=`/update/${data.id}` method="POST")
             input(
             type="text"
-            value=`${data.title}`
-            name="title"
+            value=`${data.name}`
+            name="name"
             )
-            textarea(
-            name="body"
-            )= data.body
+            input(
+            type="text"
+            value=`${data.mail}`
+            name="mail"
+            )
             input(type="submit")
             
         a(href="/") Home
