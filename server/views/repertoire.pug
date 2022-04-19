@@ -1,0 +1,23 @@
+html
+    head
+        title BIENVENUE ICI C l'ESGI
+        
+    body 
+        h1 Répertoire
+        - var n=0;
+        table  
+            tr 
+                th Liste des contacts: 
+             
+                for data in item
+                    - n++
+                    tr
+                        td= n
+                        td 
+                            a(href=`/read/${data.id}`)=data.mail
+                        td
+                            a(href=`/update/${data.id}`) Update
+                        td
+                            a(href=`/delete/${data.id}`) Delete
+    br
+    a(href="/create") Creer un contact
