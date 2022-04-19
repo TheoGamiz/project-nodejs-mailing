@@ -23,7 +23,7 @@ router.get("/", async (req, res) => {
     ORDER BY id;
     `;
   const { rows } = await db.query(query);
-  res.render("create", { item: rows });
+  res.render("create-contact", { item: rows });
 });
 
 module.exports = router;

@@ -9,7 +9,7 @@ router.get("/:id", async (req, res) => {
       `;
   const values = [req.params.id];
   const { rows } = await db.query(query, values);
-  res.render("read", { data: rows[0] });
+  res.render("read-contact", { data: rows[0] });
 });
 
 module.exports = router;
