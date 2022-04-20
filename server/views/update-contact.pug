@@ -6,21 +6,46 @@ html
     body 
         center
             h1 modifier #{data.name}
-
-
             form(action=`/update-contact/${data.id}` method="POST")
+                th Nom d'utilisateur :
                 input(
                 type="text"
                 value=`${data.name}`
                 name="name"
                 )
+                br
+                th Prénom :
+                input(
+                type="text"
+                value=`${data.firstname}`
+                name="mail"
+                )
+                br
+                th Nom de famille : :
+                input(
+                type="text"
+                value=`${data.lastname}`
+                name="mail"
+                )
+                br
+                th Adresse mail :
                 input(
                 type="text"
                 value=`${data.mail}`
                 name="mail"
                 )
+                br
                 input(type="submit")
+                br
+                br
                 
-            a(href="/") Home
+    center 
+        table
+            tr
+                td
+                    a(href="/") menu
+                td
+                td
+                    a(href="/read-contact") retour
 
             
