@@ -2,43 +2,60 @@ doctype html
 html
 
     head
-        title Create Contact
+        title Projet Email
     
 
     body 
-        
-        h1 Creer un nouvel utilisateur: 
-        tr 
-                th id:   _________________name:______________firstname:___________lastname:___________email:_______________date:
-                
-        form(action=`/create-contact/` method="POST")
-            input(
-            type="text"
-            name="id"
-            )
-            input(
-            type="text"
-            name="name"
-            )
-            input(
-            type="text"
-            name="firstname"
-            )
-            input(
-            type="text"
-            name="lastname"
-            )
-            input(
-            type="text"
-            name="mail"
-            )
-            input(
-            type="text"
-            name="creationdate"
-            )
-            
-            input(type="submit")
+        center
+            h1 Nouveau contact 
+            tr         
+            form(action=`/create-contact/` method="POST")
+                th Id :
+                br
+                input(
+                type="text"
+                name="id"
+                )
+                br
+                th Nom d'utilisateur :
+                br
+                input(
+                type="text"
+                name="name"
+                )
+                br
+                th Prénom :
+                br
+                input(
+                type="text"
+                name="firstname"
+                )
+                br
+                th Nom :
+                br
+                input(
+                type="text"
+                name="lastname"
+                )
+                br
+                th Adresse mail :
+                br
+                input(
+                type="text"
+                name="mail"
+                )
+                br
+                th Date de création :
+                br
+                input(
+                type="text"
+                name="creationdate"
+                )
+                br
+                br
+                input(type="submit")
 
-    
-        
-        a(href="/repertoire") Retour
+                br                
+                br
+        center
+            a(href="/repertoire") Retour

@@ -1,21 +1,26 @@
 doctype html 
 html
-
     head
-        title=data.name
+        title Projet Email
 
     body 
-        form(action=`/update-contact/${data.id}` method="POST")
-            input(
-            type="text"
-            value=`${data.name}`
-            name="name"
-            )
-            input(
-            type="text"
-            value=`${data.mail}`
-            name="mail"
-            )
-            input(type="submit")
+        center
+            h1 modifier #{data.name}
+
+
+            form(action=`/update-contact/${data.id}` method="POST")
+                input(
+                type="text"
+                value=`${data.name}`
+                name="name"
+                )
+                input(
+                type="text"
+                value=`${data.mail}`
+                name="mail"
+                )
+                input(type="submit")
+                
+            a(href="/") Home
+
             
-        a(href="/") Home

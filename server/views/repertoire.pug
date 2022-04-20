@@ -1,23 +1,33 @@
 html
     head
-        title BIENVENUE ICI C l'ESGI
+        title Projet Email
         
     body 
-        h1 Répertoire
-        - var n=0;
-        table  
-            tr 
-                th Liste des contacts: 
-             
-                for data in item
-                    - n++
-                    tr
-                        td= n
-                        td 
-                            a(href=`/read-contact/${data.id}`)=data.mail
-                        td
-                            a(href=`/update-contact/${data.id}`) Update
-                        td
-                            a(href=`/delete-contact/${data.id}`) Delete
+        center
+            h1 Répertoire
+            - var n=0;
+            table  
+                tr 
+                    th Liste des contacts: 
+                
+                    for data in item
+                        - n++
+                        tr
+                            td= n
+                            td 
+                                a(href=`/read-contact/${data.id}`)=data.name
+                            td
+                            td
+                            td
+                                a(href=`/update-contact/${data.id}`) modifier
+                            td
+                                a(href=`/delete-contact/${data.id}`) supprimer
     br
-    a(href="/create-contact") Creer un contact
+    center 
+        table
+            tr
+                td
+                    a(href="/create-contact") nouveau contact
+                td
+                td
+                    a(href="/") menu
