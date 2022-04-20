@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
   const values = [req.body.id, req.body.name, req.body.firstname, req.body.lastname, req.body.mail, req.body.creationdate];
   const { rows } = await db.query(query, values);
   console.log(rows);
-  res.redirect("/");
+  res.redirect("/repertoire");
 });
 
 router.get("/", async (req, res) => {
