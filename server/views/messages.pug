@@ -1,34 +1,38 @@
 doctype html 
 html
     head
-        title BIENVENUE ICI C l'ESGI
+        title Projet Email 
         
     body 
-        h1 Creation du message: 
-        h4 Choisissez un contact:
-        select#pet-select(name='pets')
-            for data in item
+        center
+            h1 Message : 
+            h4 Choisir un contact :
+            select#pet-select(name='pets')
+                for data in item
+                
+                            - n++ 
+                            option(value='')=data.mail
+        center
+            h4 Choisir un model :                  
+            select#pet-select(name='pets')
+                option(value='') Choisissez un contact
+                option(value='dog') Dog
+                option(value='cat') Cat
+                option(value='hamster') Hamster
+                option(value='parrot') Parrot
+                option(value='spider') Spider
+                option(value='goldfish') Goldfish
             
-                        - n++ 
-                        option(value='')=data.mail
-        br
-        br
-        br
-        
-        
-        h4 Choisissez un model:                  
-        select#pet-select(name='pets')
-          option(value='') Choisissez un contact
-          option(value='dog') Dog
-          option(value='cat') Cat
-          option(value='hamster') Hamster
-          option(value='parrot') Parrot
-          option(value='spider') Spider
-          option(value='goldfish') Goldfish
-        
-        br
-    br
-    a(href="/messages") Envoyer un message
-    br
-    br
-    a(href="/repertoire") Répertoire
+            br
+            br
+            a(href="/messages") envoyer
+            br
+            br
+        center 
+            table
+                tr
+                    td
+                        a(href="/repertoire") répertoire
+                    td
+                    td
+                        a(href="/") menu
