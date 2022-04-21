@@ -1,0 +1,32 @@
+doctype html 
+html
+    head
+        title Projet Email
+       
+    body 
+        center
+            h1 Contact #{data.id}
+            h3=data.name
+            th Nom d'utilisateur : #{data.name}    
+            br
+            th Prénom : #{data.firstname}   
+            br
+            th Nom de famille : #{data.lastname}    
+            br
+            th adresse mail : #{data.mail}
+            br
+            br
+            a(href=`/update-contact/${data.id}`) modifier
+            td 
+            td
+            a(href=`/delete-contact/${data.id}`) supprimer
+            br
+            br
+    center 
+        table
+            tr
+                td
+                    a(href="/") menu
+                td
+                td
+                    a(href="/repertoire") retour
