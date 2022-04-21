@@ -1,0 +1,67 @@
+doctype html 
+html
+
+    head
+        title Projet Email
+    
+
+    body 
+        center
+            h1 Nouveau contact 
+            tr         
+            form(action=`/create-contact/` method="POST")
+                th Id :
+                br
+                input(
+                type="text"
+                name="id"
+                )
+                br
+                th Nom d'utilisateur :
+                br
+                input(
+                type="text"
+                name="name"
+                )
+                br
+                th Prénom :
+                br
+                input(
+                type="text"
+                name="firstname"
+                )
+                br
+                th Nom :
+                br
+                input(
+                type="text"
+                name="lastname"
+                )
+                br
+                th Adresse mail :
+                br
+                input(
+                type="text"
+                name="mail"
+                )
+                br
+                th Date de création :
+                br
+                input(
+                type="text"
+                name="creationdate"
+                )
+                br
+                br
+                input(type="submit")
+
+                br                
+                br
+    center 
+        table
+            tr
+                td
+                    a(href="/") menu
+                td
+                td
+                    a(href="/repertoire") retour

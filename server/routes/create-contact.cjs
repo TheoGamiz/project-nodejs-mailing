@@ -2,9 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../database.cjs");
 
-router.get("/", (req, res) => {
-  res.render("create");
-});
+
 
 router.post("/", async (req, res) => {
   console.log(req.body);
@@ -16,7 +14,16 @@ router.post("/", async (req, res) => {
   const values = [req.body.id, req.body.name, req.body.firstname, req.body.lastname, req.body.mail, req.body.creationdate];
   const { rows } = await db.query(query, values);
   console.log(rows);
-  res.redirect("/");
+  res.redirect("/repertoire");
+});
+
+router.get("/", async (req, res) => {
+  const query = `
+    SELECT * FROM contact
+    ORDER BY id;
+    `;
+  const { rows } = await db.query(query);
+  res.render("create-contact", { item: rows });
 });
 
 module.exports = router;
