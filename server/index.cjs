@@ -33,6 +33,16 @@ app.get("/", async (req, res) => {
   res.render("index", { item: rows });
 });
 
+
+app.get("/contact", async (req, res) => {
+  const query = `
+    SELECT * FROM contact
+    ORDER BY id;
+    `;
+  const { rows } = await db.query(query);
+  res.json(rows);
+});
+
 app.listen(3000, () => {
   console.log("At port 3000");
 });

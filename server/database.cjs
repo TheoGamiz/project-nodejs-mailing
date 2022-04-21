@@ -5,7 +5,7 @@ const pool = new Pool({
   connectionString,
   
 });
-console.log(connectionString)
+
 module.exports = {
   query: (text, params) => pool.query(text, params),
 };
