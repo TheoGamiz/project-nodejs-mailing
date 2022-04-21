@@ -7,6 +7,8 @@ const read = require("./routes/read-contact.cjs");
 const update = require("./routes/update-contact.cjs");
 const rep = require("./routes/repertoire.cjs");
 const del = require("./routes/delete-contact.cjs");
+const msg = require("./routes/messages.cjs");
+
 
 const app = express();
 
@@ -18,6 +20,7 @@ app.use("/read-contact", read);
 app.use("/update-contact", update);
 app.use("/delete-contact", del);
 app.use("/repertoire", rep);
+app.use("/messages", msg)
 
 
 

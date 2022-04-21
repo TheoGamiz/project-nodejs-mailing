@@ -1,0 +1,34 @@
+doctype html 
+html
+    head
+        title BIENVENUE ICI C l'ESGI
+        
+    body 
+        h1 Creation du message: 
+        h4 Choisissez un contact:
+        select#pet-select(name='pets')
+            for data in item
+            
+                        - n++ 
+                        option(value='')=data.mail
+        br
+        br
+        br
+        
+        
+        h4 Choisissez un model:                  
+        select#pet-select(name='pets')
+          option(value='') Choisissez un contact
+          option(value='dog') Dog
+          option(value='cat') Cat
+          option(value='hamster') Hamster
+          option(value='parrot') Parrot
+          option(value='spider') Spider
+          option(value='goldfish') Goldfish
+        
+        br
+    br
+    a(href="/messages") Envoyer un message
+    br
+    br
+    a(href="/repertoire") Répertoire

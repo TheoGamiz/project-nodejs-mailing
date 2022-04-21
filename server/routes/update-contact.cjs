@@ -23,7 +23,7 @@ router.post("/:id", async (req, res) => {
   const values = [req.body.name, req.body.mail, req.params.id];
   const { rows } = await db.query(query, values);
   console.log(rows);
-  res.redirect("/");
+  res.redirect("/repertoire");
 });
 
 module.exports = router;

@@ -11,7 +11,7 @@ router.get("/:id", async (req, res) => {
   const values = [req.params.id];
   const  result  = await db.query(query, values);
   console.log(result);
-  res.redirect("/");
+  res.redirect("/repertoire");
 });
 
 module.exports = router;
