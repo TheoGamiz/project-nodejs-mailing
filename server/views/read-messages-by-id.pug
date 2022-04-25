@@ -1,0 +1,36 @@
+doctype html 
+html
+    head
+        title Projet Email
+       
+    body 
+        center
+            h1 Message #{data.id}
+            h3=data.destinataire
+            th id : #{data.id}    
+            br
+            th template : #{data.template}    
+            br
+            th objet : #{data.subject}   
+            br
+            th contenu : #{data.content}    
+            br
+            th destinataire : #{data.destinataire}
+            br
+            th date de création : #{data.creationdate}
+            br
+            br
+            a(href=`/update-messages/${data.id}`) modifier
+            td 
+            td
+            a(href=`/delete-messages/${data.id}`) supprimer
+            br
+            br
+    center 
+        table
+            tr
+                td
+                    a(href="/") menu
+                td
+                td
+                    a(href="/read-messages") retour

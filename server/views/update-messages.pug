@@ -1,0 +1,45 @@
+doctype html 
+html
+    head
+        title Projet Email
+
+    body 
+        center
+            h1 Modifier mail
+            form(action=`/update-messages/${data.id}` method="POST")
+                th Template : 
+                input(
+                type="text"
+                value=`${data.template}`
+                name="$1"
+                )
+                br
+                th Objet : 
+                input(
+                type="text"
+                value=`${data.subject}`
+                name="$2"
+                )
+                br
+                th contenue : 
+                input(
+                type="text"
+                value=`${data.content}`
+                name="$3"
+                )
+                br
+                br
+                input(type="submit")
+                br
+                br
+                
+    center 
+        table
+            tr
+                td
+                    a(href="/") menu
+                td
+                td
+                    a(href="/read-messages") retour
+
+            
