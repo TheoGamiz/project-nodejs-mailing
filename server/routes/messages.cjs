@@ -6,25 +6,7 @@ const nodemailer = require ("nodemailer")
 const hbs = require ("nodemailer-express-handlebars")
 
 
-var transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "projetnodejsesgi@gmail.com",
-    pass: "azertyjs",
-  },
-});
 
-const nodeMailOptions = {
-  viewEngine: {
-    extName: ".handlebars",
-    partialsDir: path.resolve("./templates"),
-    defaultLayout: false,
-  },
-  viewPath: path.resolve("./templates"),
-  extName: ".handlebars",
-};
-
-transporter.use("compile", hbs(nodeMailOptions));
 
 router.get("/", async (req, res) => {
   const query = `
@@ -55,13 +37,33 @@ router.post("/", async (req, res) => {
       ladate.getFullYear(),
   ];
   const { rows } = await db.query(query, values);
+
+  var transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "projetnodejsesgi@gmail.com",
+    pass: "azertyjs",
+  },
+});
+console.log("OOOOOOOOOOOOOOOOO"+values+".   "+values[0])
+const nodeMailOptions = {
+  viewEngine: {
+    extName: ".handlebars",
+    partialsDir: path.resolve("../server/templates"),
+    defaultLayout: false,
+  },
+  viewPath: path.resolve("../server/templates"),
+  extName: ".handlebars",
+};
+
+transporter.use("compile", hbs(nodeMailOptions), values);
   var mailOptions = {
     from: "projetnodejsesgi@gmail.com",
-    to: req.body.template,
-    subject: req.body.subject,
+    to: values[0],
+    subject: values[2],
     template: "madame",
     context: {
-      text: "Contenu",
+      text: values[3],
     },
   };
   transporter.sendMail(mailOptions, function (error, info) {
