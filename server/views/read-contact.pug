@@ -7,6 +7,8 @@ html
         center
             h1 Contact #{data.id}
             h3=data.name
+            th id : #{data.id}    
+            br
             th Nom d'utilisateur : #{data.name}    
             br
             th Prénom : #{data.firstname}   
@@ -14,6 +16,8 @@ html
             th Nom de famille : #{data.lastname}    
             br
             th adresse mail : #{data.mail}
+            br
+            th date de création : #{data.creationdate}
             br
             br
             a(href=`/update-contact/${data.id}`) modifier

@@ -21,8 +21,9 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "swagger-ui-express": "^4.3.0",
-    "pg": "^8.7.3"
+    "nodemailer": "^6.7.3",
+    "nodemailer-express-handlebars": "^5.0.0",
+    "pg": "^8.7.3",
+    "swagger-ui-express": "^4.3.0"
   }
-
 }

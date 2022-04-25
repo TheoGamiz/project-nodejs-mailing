@@ -30,7 +30,6 @@ var mailOptions = {
   context: {
     text: "Contenu"
   }
-
 };
 
 transporter.sendMail(mailOptions, function (error, info) {

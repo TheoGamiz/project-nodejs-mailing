@@ -15,6 +15,48 @@ html
         br
         br
         
+
+
+    body 
+        center
+            h1 Nouveau message
+            tr         
+            form(action=`/messages/` method="POST")
+                br
+                th Destinataire :
+                br
+                input(
+                type="text"
+                name="destinataire"
+                )
+                br
+                th Template (1 ou 2) :
+                br
+                input(
+                type="text"
+                name="template"
+                )
+                br
+                th Sujet :
+                br
+                input(
+                type="text"
+                name="subject"
+                )
+                br
+                th Contenu :
+                br
+                input(
+                type="text"
+                name="content"
+                )
+                br
+                br
+                input(type="submit")
+
+                br                
+                br
+    center 
         
         h4 Choisissez un model:                  
         select#pet-select(name='pets')
@@ -31,4 +73,4 @@ html
     a(href="/messages") Envoyer un message
     br
     br
-    a(href="/repertoire") Répertoire
+    a(href="/messages") Répertoire
