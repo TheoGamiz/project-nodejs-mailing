@@ -66,6 +66,7 @@ transporter.use("compile", hbs(nodeMailOptions), values);
       text: values[3],
     },
   };
+  
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
