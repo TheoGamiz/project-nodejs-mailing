@@ -15,11 +15,11 @@ html
                         tr
                             td= n
                             td 
-                                a(href=`/read-messages/${data.id}`)=data.destinataire
+                                a(href=`/read-messages-by-id/${data.id}`)=data.destinataire
                             td
                             td
                             td
-                                a(href=`/update-contact/${data.id}`) modifier
+                                a(href=`/update-messages/${data.id}`) modifier
                             td
                                 a(href=`/delete-contact/${data.id}`) supprimer
         br

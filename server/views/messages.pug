@@ -4,14 +4,15 @@ html
         title BIENVENUE ICI C l'ESGI
         
     body 
-        h1 Creation du message: 
-        h4 Choisissez un contact:
-        select#contact(name='contacts')
-            for data in item
-                - n++ 
-                option(value='')=data.firstname
-            option(value='') test
-        br
+        center
+            h1 Creation du message: 
+            h4 Choisissez un contact:
+            select#contact(name='contacts')
+                for data in item
+                    - n++ 
+                    option(value='')=data.firstname
+                option(value='') test
+            br
         br
         br
         
@@ -69,8 +70,9 @@ html
           option(value='goldfish') Goldfish
         
         br
-    br
-    a(href="/read-messages") Messages envoyés
-    br
-    br
-    a(href="/messages") Répertoire
+        center
+            br
+            a(href="/read-messages") Messages envoyés
+            br
+            br
+            a(href="/messages") Répertoire
