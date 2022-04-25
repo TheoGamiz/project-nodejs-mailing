@@ -57,15 +57,24 @@ const nodeMailOptions = {
 };
 
 transporter.use("compile", hbs(nodeMailOptions), values);
+if (values[1]==1){
+  var templ = "madame"
+}
+else {
+  var templ = "monsieur"
+}
+
   var mailOptions = {
     from: "projetnodejsesgi@gmail.com",
     to: values[0],
     subject: values[2],
-    template: "madame",
+    template: templ,
     context: {
       text: values[3],
     },
   };
+  
+
   
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
