@@ -11,7 +11,8 @@ router.post("/", async (req, res) => {
     VALUES($1,$2, $3, $4, $5, $6)
     RETURNING *;
     `;
-  const values = [req.body.id, req.body.name, req.body.firstname, req.body.lastname, req.body.mail, req.body.creationdate];
+  var ladate=new Date()
+  const values = [req.body.id, req.body.name, req.body.firstname, req.body.lastname, req.body.mail, ladate.getDate()+"/"+(ladate.getMonth()+1)+"/"+ladate.getFullYear()];
   const { rows } = await db.query(query, values);
   console.log(rows);
   res.redirect("/repertoire");
