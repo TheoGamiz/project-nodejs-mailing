@@ -8,7 +8,7 @@ router.get("/", async (req, res) => {
      ORDER BY id;
       `;
   const { rows } = await db.query(query);
-  res.render("repertoire", { item: rows });
+  res.render("read-messages", { item: rows });
 });
 
 module.exports = router;

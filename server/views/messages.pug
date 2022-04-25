@@ -6,11 +6,11 @@ html
     body 
         h1 Creation du message: 
         h4 Choisissez un contact:
-        select#pet-select(name='pets')
+        select#contact(name='contacts')
             for data in item
-            
-                        - n++ 
-                        option(value='')=data.mail
+                - n++ 
+                option(value='')=data.firstname
+            option(value='') test
         br
         br
         br
