@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
     ORDER BY id;
     `;
   const { rows } = await db.query(query);
-  res.render("messages", { repertoire: rows });
+  res.render("repertoire", { item: rows });
 });
 
 
