@@ -8,8 +8,12 @@ const updatemsg = require("./routes/update-messages.cjs");
 const rep = require("./routes/repertoire.cjs");
 const del = require("./routes/delete-contact.cjs");
 const msg = require("./routes/messages.cjs");
+const docs = require("./docs/index.cjs");
 const readmsg = require("./routes/read-messages.cjs");
 const deletemsg = require("./routes/delete-messages.cjs");
+const swaggerUI = require("swagger-ui-express");
+//import docs from "./docs/index.mjs";
+
 const readmsgid = require("./routes/read-messages-by-id.cjs");
 const stat = require("./routes/stat.cjs");
 
@@ -29,6 +33,7 @@ app.use("/delete-messages", deletemsg);
 app.use("/update-messages", updatemsg);
 app.use("/read-messages-by-id", readmsgid);
 app.use("/stat", stat);
+app.use("/swager", swaggerUI.serve, swaggerUI.setup(docs));
 
 app.get("/", async (req, res) => {
   const query = `
