@@ -8,10 +8,13 @@ html
             h1 Statistique
             br
         center 
-            table
-                tr
-                    td
-                        a(href="/repertoire") répertoire
-                    td
-                    td
-                        a(href="/stat") statistique
+                th total contacts : #{item.length}
+                br
+                th dernier message : 
+                a(href=`/read-messages-by-id/${lastmsg[0].id}`)=lastmsg[0].content
+                br
+                th total messages : #{numberMsg[0].count}
+                br
+                br
+                a(href="/") menu
+

@@ -2,8 +2,6 @@ const express = require("express");
 const router = express.Router();
 const db = require("../database.cjs");
 
-
-
 router.get("/", async (req, res) => {
   const query = `
     SELECT * FROM contact
@@ -12,7 +10,5 @@ router.get("/", async (req, res) => {
   const { rows } = await db.query(query);
   res.render("repertoire", { item: rows });
 });
-
-
 
 module.exports = router;
